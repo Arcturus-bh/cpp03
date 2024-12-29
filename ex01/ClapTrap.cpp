@@ -6,23 +6,28 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 18:29:51 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/27 22:57:57 by aldalmas         ###   ########.fr       */
+/*   Updated: 2024/12/29 20:34:15 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 // CONSTRUCTEUR + DESTRUCTEUR -----
+
+ClapTrap::ClapTrap(void) {
+    std::cout << "ClapTrap " << this->getName() << " has been created!" << std::endl;
+}
+
 ClapTrap::ClapTrap(const char* name) {
-        std::cout << "\nDefault constructor called" << std::endl;
-   this->setName(name);
-   this->setHitPoint(10);
-   this->setEnergyPoint(10);
-   this->setAttackDamage(0);
+    std::cout << "ClapTrap " << this->getName() << " has been created!" << std::endl;
+    this->setName(name);
+    this->setHitPoint(10);
+    this->setEnergyPoint(10);
+    this->setAttackDamage(0);
 }
 
 ClapTrap::~ClapTrap(void) {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap " << this->getName() << " destructor called" << std::endl;
 }
 
 

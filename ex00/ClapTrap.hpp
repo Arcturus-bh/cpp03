@@ -6,12 +6,12 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 18:27:06 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/27 22:26:03 by aldalmas         ###   ########.fr       */
+/*   Updated: 2024/12/29 18:49:05 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 #include <cstdlib>

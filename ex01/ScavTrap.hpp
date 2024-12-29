@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/27 18:26:19 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/29 19:09:33 by aldalmas         ###   ########.fr       */
+/*   Created: 2024/12/29 18:14:22 by aldalmas          #+#    #+#             */
+/*   Updated: 2024/12/29 19:11:13 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-int main(void) {
-    ScavTrap dumby = ScavTrap("Dumby");
+class ScavTrap : public ClapTrap {
+    public:
+        ScavTrap(const char* name);
+        ~ScavTrap(void);
 
-    return 0;
-}
+
+    void attack(const std::string& target);
+};
+#endif

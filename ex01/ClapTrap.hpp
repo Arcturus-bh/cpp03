@@ -6,12 +6,12 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 18:27:06 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/27 22:26:03 by aldalmas         ###   ########.fr       */
+/*   Updated: 2024/12/29 20:32:21 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 #include <cstdlib>
@@ -24,13 +24,14 @@
 # define RESET   "\x1b[0m"
 
 class ClapTrap {
-    private:
+    protected:
         std::string     _name;
         unsigned int    _hit_point;
         unsigned int    _energy_point;
         unsigned int    _attack_damage;
 
     public:
+        ClapTrap(void);
         ClapTrap(const char* name);
         ~ClapTrap(void);
         void            setName(const char* name);
