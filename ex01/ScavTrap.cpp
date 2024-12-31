@@ -6,19 +6,17 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 18:16:30 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/29 20:33:24 by aldalmas         ###   ########.fr       */
+/*   Updated: 2024/12/31 18:54:35 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(const char* name) {
-    this->setName(name);
+ScavTrap::ScavTrap(const char* name) : ClapTrap(name) {
     this->setHitPoint(100);
     this->setEnergyPoint(50);
     this->setAttackDamage(20);
     std::cout << "ScavTrap " << this->getName() << " has been created!" << std::endl;
-
 }
 
 ScavTrap::~ScavTrap(void) {
@@ -41,4 +39,8 @@ void ScavTrap::attack(const std::string& target) {
         std::cout << YELLOW << "ScavTrap " << this->_name << " can't attack " << target << " because it needs to be repaired!" << RESET << std::endl;
         return;
     }
+}
+
+void ScavTrap::guardGate(void) {
+    std::cout << MAGENTA << "ScavTrap " << this->_name << " enter in Gate Keeper mode !"<< RESET << std::endl;
 }
