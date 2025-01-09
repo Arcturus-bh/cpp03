@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/27 18:27:06 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/29 20:32:21 by aldalmas         ###   ########.fr       */
+/*   Created: 2025/01/09 11:31:05 by aldalmas          #+#    #+#             */
+/*   Updated: 2025/01/09 11:31:08 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ class ClapTrap {
         unsigned int    getEnergyPoint(void);
         unsigned int    getAttackDamage(void);
 
-        void            attack(const std::string& target);
-        void            takeDamage(unsigned int amount);
-        void            beRepaired(unsigned int amount);
+        virtual void    attack(const std::string& target);
+        virtual void    takeDamage(unsigned int amount);
+        virtual void    beRepaired(unsigned int amount);
         void            getInfos(void);
 };
 
