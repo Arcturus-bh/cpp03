@@ -6,7 +6,7 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 18:29:51 by aldalmas          #+#    #+#             */
-/*   Updated: 2025/01/09 10:34:49 by aldalmas         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:31:49 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ ClapTrap::ClapTrap(const char* name) {
     this->setEnergyPoint(100);
     this->setAttackDamage(30);
 }
+
+ClapTrap::ClapTrap(const ClapTrap& other) {}
 
 ClapTrap::~ClapTrap(void) {
     std::cout << "ClapTrap " << this->getName() << " destructor called" << std::endl;
