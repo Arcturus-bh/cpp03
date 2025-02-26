@@ -6,18 +6,35 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 18:16:30 by aldalmas          #+#    #+#             */
-/*   Updated: 2025/01/09 10:20:12 by aldalmas         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:20:32 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(const char* name) : ClapTrap(name) {
-    std::cout << "ScavTrap " << this->getName() << " has been created!" << std::endl;
+ScavTrap::ScavTrap(const char* name) : ClapTrap(name)  {
+    this->_attack_damage = 20;
+    this->_energy_point = 50;
+    this->_hit_point = 100;
+    std::cout << GREEN "ScavTrap " << this->getName() << " has been created!" << RESET << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
+    *this = other;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+    if (this != &other) {
+        this->_name = other._name;
+        this->_hit_point = other._hit_point;
+        this->_energy_point = other._energy_point;
+        this->_attack_damage = other._attack_damage;
+    }
+    return *this; 
 }
 
 ScavTrap::~ScavTrap(void) {
-    std::cout << "ScavTrap " << this->getName() << " destructor called" << std::endl;
+    std::cout << RED "ScavTrap " << this->getName() << " destructor called" << RESET << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target) {

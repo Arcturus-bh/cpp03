@@ -6,7 +6,7 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 18:27:06 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/29 18:49:05 by aldalmas         ###   ########.fr       */
+/*   Updated: 2025/02/25 10:59:11 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ class ClapTrap {
 
     public:
         ClapTrap(const char* name);
+        ClapTrap(const ClapTrap& other);
+        ClapTrap& operator=(const ClapTrap& other);
         ~ClapTrap(void);
+        
         void            setName(const char* name);
         void            setHitPoint(unsigned int hit_point);
         void            setEnergyPoint(unsigned int energy_point);
@@ -46,6 +49,7 @@ class ClapTrap {
         void            attack(const std::string& target);
         void            takeDamage(unsigned int amount);
         void            beRepaired(unsigned int amount);
+
         void            getInfos(void);
 };
 

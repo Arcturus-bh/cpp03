@@ -6,45 +6,39 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:34:29 by aldalmas          #+#    #+#             */
-/*   Updated: 2025/01/09 11:34:31 by aldalmas         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:09:34 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+// CONSTRUCTEURS ET DESTRUCTEURS -----------------------------------
 FragTrap::FragTrap(const char* name) : ClapTrap(name) {
-    std::cout << "FragTrap " << this->getName() << " has been created!" << std::endl;
+    this->_hit_point = 100;
+    this->_energy_point = 100;
+    this->_attack_damage = 30;
+    std::cout << GREEN "FragTrap " << this->getName() << " has been created!" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
+    *this = other;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& other) {
+    if (this != &other) {
+        this->_name = other._name;
+        this->_hit_point = other._hit_point;
+        this->_energy_point = other._energy_point;
+        this->_attack_damage = other._attack_damage;
+    }
+    return *this; 
 }
 
 FragTrap::~FragTrap(void) {
-    std::cout << "FragTrap " << this->getName() << " destructor called" << std::endl;
+    std::cout << RED "FragTrap " << this->getName() << " destructor called" << RESET << std::endl;
 }
 
-void FragTrap::takeDamage(unsigned int amount) {
-    this->getInfos();
-    if (this->_hit_point == 0)
-    {
-        std::cout << YELLOW << "FragTrap " << this->_name << " is already down. It needs to be repaired!" << std::endl;
-        return;   
-    }
-    if (amount > this->_hit_point)
-        amount = this->_hit_point;
-    std::cout << RED << "FragTrap " << this->_name << " just lost " << amount << " hit point(s)!" << RESET << std::endl;
-    this->_hit_point -= amount;
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-    this->getInfos();
-    if (this->_energy_point > 0)
-    {
-        std::cout << GREEN << "FragTrap " << this->_name << " repaired itself by " << amount << "!" << RESET << std::endl;
-        this->_hit_point += amount;
-        this->_energy_point--;   
-    }
-    else
-        std::cout << YELLOW << "FragTrap " << this->_name << " can't be repaired. It no longer has energy points!" << RESET << std::endl;
-}
-
+// FONCTIONS MEMBRES -----------------------------------
 void FragTrap::attack(const std::string& target) {
         this->getInfos();
     if (this->_energy_point > 0 && this->_hit_point > 0) 

@@ -6,7 +6,7 @@
 /*   By: aldalmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 18:26:19 by aldalmas          #+#    #+#             */
-/*   Updated: 2024/12/27 22:56:24 by aldalmas         ###   ########.fr       */
+/*   Updated: 2025/02/26 14:36:08 by aldalmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(void) {
     {
         ClapTrap doofy = ClapTrap("Doofy");
         
-        std::cout << "---Hit points test---" << std::endl;
+        std::cout << "\n---Hit points test---" << std::endl;
         
         doofy.setAttackDamage(10);
         doofy.takeDamage(3);
@@ -50,8 +50,7 @@ int main(void) {
     {
         ClapTrap proctologue = ClapTrap("Proctologue");
 
-        std::cout << "---0 HP and 0 EP test---" << std::endl;
-        proctologue.setAttackDamage(1);
+        std::cout << "\n---0 HP and 0 EP test---" << std::endl;
         proctologue.attack("you");
         proctologue.attack("you");
         proctologue.attack("you");
